@@ -30,10 +30,6 @@ public class Main {
 
 
         int opcion;
-        System.out.println(codigo_producto);
-        System.out.println(productos);
-        System.out.println(stock);
-        System.out.println(precios);
 
         //Menu de opciones
         do {
@@ -64,7 +60,7 @@ public class Main {
                     actualizar_inventario();
                     continue;
                 case 4:
-                    //Funcion para ver el reporte de un solo producto o de todos los productos ordenado de menor a mayor stock
+                    //Funcion para ver el reporte de un solo producto o de todos los productos ordenado por cantidad de stock de menor a mayor
                     Ordenamiento_busqueda.busqueda_producto(codigo_producto, productos, stock, precios);
                 default:
                     continue;
@@ -296,7 +292,7 @@ public class Main {
                     }
                     continue;
                 case 5:
-                    break;
+                    System.exit(5);
             }
         }while (opcion != 4);
 
