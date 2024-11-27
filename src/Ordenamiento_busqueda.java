@@ -114,7 +114,8 @@ public class Ordenamiento_busqueda {
         //Opciones que debe elegir el usuario
 
         System.out.println("1. Buscar reporte del producto por nombre");
-        System.out.print("2. Generar reporte de todos los productos en stock");
+        System.out.print("2. Generar reporte de todos los productos en stock\n");
+        System.out.println("3. Regresar al menu principal");
         System.out.println("\nSeleccione una opción: ");
         int opcion = scanner.nextInt();
         if (opcion == 1) {
@@ -170,6 +171,8 @@ public class Ordenamiento_busqueda {
                 System.out.println("Precio: " + preciosArr.get(i));
                 System.out.println("----------");
             }
+        } else if (opcion == 3) {
+            return;
         } else {
             System.out.println("Producto ingresado es invalido");
         }

@@ -64,6 +64,7 @@ public class Main {
                     actualizar_inventario();
                     continue;
                 case 4:
+                    //Funcion para ver el reporte de un solo producto o de todos los productos ordenado de menor a mayor stock
                     Ordenamiento_busqueda.busqueda_producto(codigo_producto, productos, stock, precios);
                 default:
                     continue;
