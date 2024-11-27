@@ -49,9 +49,9 @@ public class Ordenamiento_busqueda {
 
             int posicion_medio = (int)Math.floor((posicion_inicial + posicion_final)/2);
             int elemento = codigo_pro.get(posicion_medio);
-            System.out.println("posicion:" + elemento);
+
             if (elemento == valor_buscar) { //cadena.equals(valor_buscar)
-                System.out.println("Encontre el valor");
+
                 posicion_final = 0; posicion_inicial = 1;
                 return new ResultadoBusqueda(true,posicion_medio,productos_arr.get(posicion_medio),stock_arr.get(posicion_medio),precios_arr.get(posicion_medio));
             }
@@ -77,18 +77,29 @@ public class Ordenamiento_busqueda {
         }
     }
 
+    public static void  actualizar_stock_inv(LinkedList<Integer> stock,int posicion,String accion, int agregar_unidades){
+        if (accion.equals("-")) {
+            stock.set(posicion, stock.get(posicion) - agregar_unidades);
+        }else if (accion.equals("+")) {
+            stock.set(posicion, stock.get(posicion) + agregar_unidades);
+        }
+    }
+
+
+
+
 
     //RECURSIVIDAD
     public static void actualizar_stock_masivo(Registro_pedido canasta, String accion,LinkedList<Integer> codigo_pro,LinkedList<String> productos_arr, LinkedList<Integer> stock_arr, LinkedList<Double> precios_arr,int posicion){
 
-        if(posicion == canasta.getCanasta().size()-1) {
+        if(posicion == canasta.getCanasta().size()) {
             return;
         }else {
             LinkedList<Integer> codigos = canasta.getCanasta();
 
             ResultadoBusqueda resultadoBusqueda = busqueda_codigo(codigo_pro, codigos.get(posicion), productos_arr, stock_arr, precios_arr);
 
-            actualizar_stock(stock_arr, resultadoBusqueda.getPosicion(), "+");
+            actualizar_stock_inv(stock_arr, resultadoBusqueda.getPosicion(), "+",canasta.getUnidades().get(posicion));
         }
         actualizar_stock_masivo(canasta, accion,codigo_pro,productos_arr,stock_arr,precios_arr,posicion +1);
     }
