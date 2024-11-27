@@ -55,9 +55,14 @@ public class ResultadoBusqueda {
 
     @Override
     public String toString() {
-        return "ResultadoBusqueda{" +
-                "encontrado=" + encontrado +
-                ", posicion=" + posicion +
-                '}';
+        String encabezado = String.format("%-15s %-5s %-10s\n", "Producto", "Precio","Stock");
+        encabezado += "------------------------------------------\n";
+
+        String informacion=String.format(
+                "%-15s %-10.2f %-10s",
+                nombre,
+                precio,
+                stock);
+        return encabezado + informacion +"\n";
     }
 }
