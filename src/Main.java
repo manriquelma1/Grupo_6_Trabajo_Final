@@ -62,6 +62,9 @@ public class Main {
                 case 3:
                     //Funcion para actualizar inventario y precios
                     actualizar_inventario();
+                    continue;
+                case 4:
+                    Ordenamiento_busqueda.busqueda_producto(codigo_producto, productos, stock, precios);
                 default:
                     continue;
                     //System.out.println("Opción no válida.");
