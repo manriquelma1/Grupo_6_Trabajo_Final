@@ -129,7 +129,7 @@ public class Ordenamiento_busqueda {
                     break;
                 }
             }
-            // If product is found, show details, otherwise print a message
+            // Si el producto existe mostrara los detalles del mismo
             if (productIndex != -1) {
                 System.out.println("Producto encontrado:");
                 System.out.println("Código: " + codigo_producto.get(productIndex));

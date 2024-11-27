@@ -34,8 +34,8 @@ public class Main {
         //Menu de opciones
         do {
             System.out.println("\nMenú de Inventario:");
-            System.out.println("1. Registrar producto");
-            System.out.println("2. Atender Pedidos");  //Se atiende mediante colas
+            System.out.println("1. Registrar Pedidos");
+            System.out.println("2. Gestionar Pedidos");  //Se atiende mediante colas
             System.out.println("3. Opciones de Inventario");
             System.out.println("4. Reportes");
             System.out.println("5. Salir");
